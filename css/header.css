@@ -1,0 +1,485 @@
+/* ========================================
+   GOOGLE FONT
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ========================================
+   RESET & ROOT VARIABLES
+======================================== */
+
+:root {
+    --bg-color: #070b14;
+    --bg-secondary: #0d1424;
+    --card-color: rgba(255, 255, 255, 0.04);
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --primary: #38bdf8;
+    --primary-dark: #0ea5e9;
+
+    --border-color: rgba(255, 255, 255, 0.08);
+
+    --header-height: 76px;
+    --transition: all 0.3s ease;
+}
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: var(--bg-color);
+    color: var(--text-primary);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--header-height);
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(7, 11, 20, 0.65);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid transparent;
+
+    transition: var(--transition);
+}
+
+
+/* ========================================
+   HEADER SCROLL EFFECT
+======================================== */
+
+.header.scrolled {
+    background: rgba(7, 11, 20, 0.95);
+
+    border-bottom-color: var(--border-color);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    width: 100%;
+    height: 100%;
+padding-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: var(--text-primary);
+
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   NAVIGATION MENU
+======================================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-link {
+    position: relative;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+
+/* ========================================
+   NAVIGATION UNDERLINE
+======================================== */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    left: 0;
+    bottom: -8px;
+
+    background: var(--primary);
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   RESUME BUTTON
+======================================== */
+
+.resume-btn {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+
+    color: var(--text-primary);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.resume-btn span {
+    font-size: 1.1rem;
+
+    transition: transform 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: var(--primary);
+
+    color: var(--bg-color);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.resume-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    border-color: var(--primary);
+
+    background: rgba(56, 189, 248, 0.08);
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ========================================
+   HAMBURGER → X ANIMATION
+======================================== */
+
+.menu-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ========================================
+   TEMPORARY SECTIONS
+======================================== */
+
+section {
+    min-height: 100vh;
+
+    padding: 120px 5% 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    scroll-margin-top: var(--header-height);
+}
+
+section h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+
+    color: var(--text-primary);
+}
+
+
+/* ========================================
+   DIFFERENT SECTION BACKGROUNDS
+======================================== */
+
+#home {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(56, 189, 248, 0.1),
+            transparent 35%
+        );
+}
+
+#about,
+#projects,
+#contact 
+#skills{
+    background:  radial-gradient(
+            circle at top right,
+            rgba(56, 189, 248, 0.1),
+            transparent 35%
+        );
+}
+
+
+/* ========================================
+   MOBILE NAVIGATION
+======================================== */
+
+@media (max-width: 900px) {
+
+    /* ------------------------------------
+       SHOW MOBILE MENU BUTTON
+    ------------------------------------ */
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* ------------------------------------
+       HIDE RESUME BUTTON
+    ------------------------------------ */
+
+    .resume-btn {
+        display: none;
+    }
+
+
+    /* ------------------------------------
+       MOBILE NAVIGATION MENU
+    ------------------------------------ */
+
+    .nav-menu {
+        position: absolute;
+
+        top: var(--header-height);
+        left: 0;
+
+        width: 100%;
+
+        padding: 30px 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 24px;
+
+        list-style: none;
+
+        background: rgba(7, 11, 20, 0.98);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border-bottom: 1px solid var(--border-color);
+
+        /* Closed state */
+        transform: translateY(-120%);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            transform 0.35s ease,
+            opacity 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+
+    /* ------------------------------------
+       OPEN MOBILE NAVIGATION
+    ------------------------------------ */
+
+    .nav-menu.active {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+
+    /* ------------------------------------
+       MOBILE NAVIGATION LINKS
+    ------------------------------------ */
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .nav-link::after {
+        bottom: -6px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+    }
+}
+
