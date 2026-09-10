@@ -1,14 +1,4 @@
-/* ========================================
-   GOOGLE FONT
-======================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-
-/* ========================================
-   RESET & ROOT VARIABLES
-======================================== */
-
 :root {
     --bg-color: #070b14;
     --bg-secondary: #0d1424;
@@ -25,9 +15,7 @@
     --header-height: 76px;
     --transition: all 0.3s ease;
 }
-/* ========================================
-   GLOBAL RESET
-======================================== */
+
 
 * {
     margin: 0;
@@ -41,111 +29,94 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-
-    background: var(--bg-color);
-    color: var(--text-primary);
-
+    background: #070b14;
+    color: #f8fafc;
     line-height: 1.6;
-
     overflow-x: hidden;
 }
 
+section {
+    min-height: 100vh;
 
-/* ========================================
-   CONTAINER
-======================================== */
-
-.container {
-    width: min(1200px, 90%);
-    margin: auto;
-}
-
-
-/* ========================================
-   HEADER
-======================================== */
-
-.header {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: var(--header-height);
-
-    z-index: 1000;
+    padding: 120px 5% 80px;
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    background: rgba(7, 11, 20, 0.65);
-
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    border-bottom: 1px solid transparent;
-
-    transition: var(--transition);
+    scroll-margin-top: 76px;
 }
 
+section h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
 
-/* ========================================
-   HEADER SCROLL EFFECT
-======================================== */
+    color:#f8fafc;
+}
+
+#home,
+#about,
+#projects,
+#contact 
+#skills{
+    background:  radial-gradient(
+            circle at top right,
+            rgba(56, 189, 248, 0.1),
+            transparent 35%
+        );
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: #070b14;
+    transition: all 0.3s ease;
+}
 
 .header.scrolled {
     background: rgba(7, 11, 20, 0.95);
 
-    border-bottom-color: var(--border-color);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-
-/* ========================================
-   NAVBAR
-======================================== */
-
 .navbar {
     width: 100%;
     height: 100%;
-padding-left: 15px;
+    padding-left: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 
-/* ========================================
-   LOGO
-======================================== */
 
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-
-    letter-spacing: -1px;
-
-    color: var(--text-primary);
-
+    color: #f8fafc;
     text-decoration: none;
-
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .logo span {
-    color: var(--primary);
+    color: rgb(235,35, 2);
 }
-
 .logo:hover {
     transform: translateY(-2px);
 }
 
-
-/* ========================================
-   NAVIGATION MENU
-======================================== */
 
 .nav-menu {
     display: flex;
@@ -159,7 +130,7 @@ padding-left: 15px;
 .nav-link {
     position: relative;
 
-    color: var(--text-secondary);
+    color: #94a3b8;
 
     text-decoration: none;
 
@@ -171,13 +142,11 @@ padding-left: 15px;
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary);
+    color:#fd0101;
 }
 
 
-/* ========================================
-   NAVIGATION UNDERLINE
-======================================== */
+/* Navbar underline hover */
 
 .nav-link::after {
     content: "";
@@ -190,7 +159,7 @@ padding-left: 15px;
     left: 0;
     bottom: -8px;
 
-    background: var(--primary);
+    background: #38bdf8;
 
     border-radius: 10px;
 
@@ -203,9 +172,7 @@ padding-left: 15px;
 }
 
 
-/* ========================================
-   RESUME BUTTON
-======================================== */
+
 
 .resume-btn {
     display: flex;
@@ -215,17 +182,17 @@ padding-left: 15px;
 
     padding: 10px 18px;
 
-    border: 1px solid var(--primary);
+    border: 1px solid #38bdf8;
     border-radius: 8px;
 
-    color: var(--text-primary);
+    color: rgb(248, 58, 25);
 
     font-size: 0.9rem;
     font-weight: 600;
 
     text-decoration: none;
 
-    transition: var(--transition);
+    transition:  all 0.3s ease;
 }
 
 .resume-btn span {
@@ -235,9 +202,9 @@ padding-left: 15px;
 }
 
 .resume-btn:hover {
-    background: var(--primary);
+    background: #38bdf8;
 
-    color: var(--bg-color);
+    color: white;
 
     transform: translateY(-3px);
 
@@ -272,11 +239,11 @@ padding-left: 15px;
 
     gap: 5px;
 
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .menu-btn:hover {
-    border-color: var(--primary);
+    border-color: #38bdf8;
 
     background: rgba(56, 189, 248, 0.08);
 }
@@ -312,86 +279,21 @@ padding-left: 15px;
 }
 
 
-/* ========================================
-   TEMPORARY SECTIONS
-======================================== */
-
-section {
-    min-height: 100vh;
-
-    padding: 120px 5% 80px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    scroll-margin-top: var(--header-height);
-}
-
-section h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-
-    color: var(--text-primary);
-}
-
-
-/* ========================================
-   DIFFERENT SECTION BACKGROUNDS
-======================================== */
-
-#home {
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(56, 189, 248, 0.1),
-            transparent 35%
-        );
-}
-
-#about,
-#projects,
-#contact 
-#skills{
-    background:  radial-gradient(
-            circle at top right,
-            rgba(56, 189, 248, 0.1),
-            transparent 35%
-        );
-}
-
-
-/* ========================================
-   MOBILE NAVIGATION
-======================================== */
-
 @media (max-width: 900px) {
-
-    /* ------------------------------------
-       SHOW MOBILE MENU BUTTON
-    ------------------------------------ */
 
     .menu-btn {
         display: flex;
     }
 
 
-    /* ------------------------------------
-       HIDE RESUME BUTTON
-    ------------------------------------ */
-
     .resume-btn {
         display: none;
     }
 
-
-    /* ------------------------------------
-       MOBILE NAVIGATION MENU
-    ------------------------------------ */
-
     .nav-menu {
         position: absolute;
 
-        top: var(--header-height);
+        top: 70px;
         left: 0;
 
         width: 100%;
@@ -402,18 +304,12 @@ section h1 {
         flex-direction: column;
         align-items: center;
 
-        gap: 24px;
+        gap: 20px;
 
         list-style: none;
 
-        background: rgba(7, 11, 20, 0.98);
+        background: rgba(10, 11, 20, 0.98);
 
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-
-        border-bottom: 1px solid var(--border-color);
-
-        /* Closed state */
         transform: translateY(-120%);
 
         opacity: 0;
