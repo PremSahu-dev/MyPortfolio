@@ -1,9 +1,6 @@
-
 .footer {
     position: relative;
-
     padding: 50px 0 25px;
-
     background:
         radial-gradient(
             circle at 50% 0%,
@@ -11,29 +8,19 @@
             transparent 35%
         ),
         #050912;
-
-    border-top: 1px solid var(--border-color);
-
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
 }
-
 .footer-glow {
     position: absolute;
-
     width: 300px;
     height: 200px;
-
     top: -180px;
     left: 50%;
-
     transform: translateX(-50%);
-
     border-radius: 50%;
-
     background: rgba(56, 189, 248, 0.12);
-
     filter: blur(80px);
-
     pointer-events: none;
 }
 
@@ -53,30 +40,23 @@
 
     gap: 50px;
 
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 
 .footer-logo {
     display: inline-block;
-
     margin-bottom: 18px;
-
-    color: var(--text-primary);
-
+    color:#f8fafc;
     font-size: 1.5rem;
-
     font-weight: 800;
-
     letter-spacing: -1px;
-
     text-decoration: none;
-
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 
 .footer-logo span {
-    color: var(--primary);
+    color: red;
 }
 
 
@@ -88,51 +68,38 @@
 .footer-brand p {
     max-width: 300px;
 
-    color: var(--text-secondary);
+    color: #f8fafc;
 
-    font-size: 0.85rem;
+    font-size: 15px;
 
     line-height: 1.8;
 }
 
 .footer-column h3 {
     margin-bottom: 20px;
-
-    color: var(--text-primary);
-
-    font-size: 0.95rem;
-
+    color: white;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .footer-connect-text {
     max-width: 240px;
-
     margin-bottom: 15px;
-
-    color: var(--text-secondary);
-
-    font-size: 0.82rem;
-
+    color: #94a3b8;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 1.7;
 }
 
 
 .footer-email {
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
-    color: var(--primary);
-
-    font-size: 0.82rem;
-
-    font-weight: 600;
-
+    color: #38bdf8;
+    font-size: 17px;
+    font-weight: 500;
     text-decoration: none;
-
     transition: color 0.3s ease;
 }
 
@@ -143,7 +110,7 @@
 
 
 .footer-email:hover {
-    color: var(--text-primary);
+    color: red;
 }
 
 
@@ -153,34 +120,23 @@
 
 .footer-socials {
     display: flex;
-
-    gap: 10px;
+    gap: 20px;
 }
 
 
 .footer-socials a {
     width: 42px;
     height: 42px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     border-radius: 12px;
-
     background: rgba(255, 255, 255, 0.04);
-
     border: 1px solid rgba(255, 255, 255, 0.08);
-
-    color: var(--text-secondary);
-
+    color: white;
     font-size: 0.72rem;
-
     font-weight: 700;
-
     text-decoration: none;
-
     transition:
         color 0.3s ease,
         background 0.3s ease,
@@ -191,70 +147,50 @@
 
 
 .footer-socials a:hover {
-    color: var(--primary);
-
+    color:red;
     border-color: rgba(56, 189, 248, 0.3);
-
     background: rgba(56, 189, 248, 0.08);
-
     transform: translateY(-4px);
-
     box-shadow:
         0 8px 20px rgba(56, 189, 248, 0.1);
 }
 
 .footer-bottom {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 10px;
-
     padding-top: 25px;
-
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 
 .footer-bottom p {
     color: rgba(148, 163, 184, 0.7);
-
     font-size: 0.75rem;
 }
-
 .footer-heart {
     display: inline-block;
-
     padding: 0 3px;
-
-    color: var(--primary);
-
+    color:red;
     animation: heartPulse 1.8s ease-in-out infinite;
 }
-
-
 @keyframes heartPulse {
-
     0%,
     100% {
         transform: scale(1);
     }
-
     50% {
-        transform: scale(1.2);
+        transform: scale(1.5);
+    
     }
-
 }
-
 
 /* tablet */
 
 @media (max-width: 900px) {
-
     .footer-top {
         grid-template-columns: 1fr 1fr;
-
         gap: 40px;
     }
 
@@ -264,25 +200,17 @@
 @media (max-width: 600px) {
 
     .footer {
-        padding-top: 60px;
+        padding-top: 40px;
     }
-
-
     .footer-top {
         grid-template-columns: 1fr;
-
         gap: 35px;
-
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
-
-
     .footer-brand p,
     .footer-connect-text {
         max-width: 100%;
     }
-
-
     .footer-bottom {
         flex-direction: column;
 
@@ -297,10 +225,8 @@
 @media (max-width: 400px) {
 
     .footer {
-        padding-top: 50px;
+        padding-top: 30px;
     }
-
-
     .footer-socials a {
         width: 40px;
         height: 40px;
